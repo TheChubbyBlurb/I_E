@@ -1,0 +1,28 @@
+--Boss Data Shit
+StageAPI.AddBossData("LiquidKripp", {
+    Name = "LiquidKripp",
+    Offset = Vector(5,-5),
+    Portrait = "gfx/ui/boss/Rainmaker.png",
+    Bossname = "gfx/ui/boss/Rainmakername.png",
+    Rooms = StageAPI.RoomsList("new room", require("resources.luarooms.GardenOfEden"))
+})
+
+
+local EdonBG = StageAPI.BackdropHelper({
+    Walls = {"1"}, -- you can add more, or remove some
+    NFloors = {"nfloor"},
+    LFloors = {"lfloor"},
+    Corners = {"corner"}
+}, "gfx/floors/Edon/Edon", ".png") -- the first one path to the graphics, as well as the beginning of the filename.
+local EdonGrid = StageAPI.GridGfx()
+Music.factorySong = Isaac.GetMusicIdByName("serenity")
+EdonGrid:SetRocks("gfx/grid/rocks_basement.png")
+local EdonGFX = StageAPI.RoomGfx(EdonBG, EdonGrid, "_default", "stageapi/shading/shading")
+local EdonFloor = StageAPI.CustomStage("Gardon Of Edon") -- finally defining the floor.
+EdonFloor:SetRoomGfx(EdonGFX, {RoomType.ROOM_DEFAULT, RoomType.ROOM_TREASURE, RoomType.ROOM_MINIBOSS, RoomType.ROOM_BOSS}) 
+EdonFloor:SetStageMusic(Music.factorySong, {RoomType.ROOM_DEFAULT, RoomType.ROOM_TREASURE, RoomType.ROOM_MINIBOSS, RoomType.ROOM_BOSS}) 
+EdonFloor:SetBossMusic(Music.boss3, Music.MUSIC_BOSS_OVER)
+EdonFloor:SetReplace(StageAPI.StageOverride.NecropolisTwo) -- the annoying part. we'll get to that later.
+EdonFloor:SetSpots("gfx/floors/Edon/bossspot_Edon.png", "gfx/floors/Edon/playerspot_Edon.png")
+EdonFloor:SetRooms(StageAPI.RoomsList("Edonfactoryrooms", include("resources.luarooms.GardenOfEden.xml"))) -- we'll get to this later!
+EdonFloor:SetBosses({"Rainmaker"}) -- we'll get to this later!

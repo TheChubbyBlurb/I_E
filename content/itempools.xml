@@ -1,5 +1,5 @@
 <ItemPools>
   <Pool Name="treasure">
-    <Item Name="Viagra" Weight="1" DecreaseBy="1" RemoveOn="0.1" />
+    <Item Name="Viagra" Weight="1" DecreaseBy="1" RemoveOn="0.1" Description="I feel funny.." Quality="2" cache="damage" />
   </Pool>
 </ItemPools>
