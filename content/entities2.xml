@@ -24,7 +24,7 @@
       <preload-snd id="146" /> <!-- SOUND_SHAKEY_KID_ROAR -->
   </entity>
 
-  <entity anm2path="MV01_CondomGaper.anm2" hasFloorAlts="false" reroll="true" baseHP="12" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="10" name="Custom Gaper" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="0">
+  <entity anm2path="MV01_CondomGaper.anm2" hasFloorAlts="false" reroll="true" baseHP="17" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="10" name="Condom Gaper" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="0">
 		<bestiary transform="0,0,1" anim="WalkVert" overlay="Head" />
         <gibs amount="6" blood="1" bone="1" eye="1" gut="1" large="0" />
         <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
