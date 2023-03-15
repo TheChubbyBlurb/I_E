@@ -1,3 +1,4 @@
 <items gfxroot="gfx/items/" version="1">
-  <passive description="I feel funny.." gfx="Viagra.png" name="Viagra" cache="damage"/>
+  <passive id="1" description="IM COOMING" gfx="CoomerPillow.png" name="BodyPillow" cache="firedelay"/>
+  <passive id="99" description="I feel funny.." gfx="Viagra.png" name="Viagra" cache="damage"/>
 </items>

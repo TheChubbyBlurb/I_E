@@ -5,7 +5,12 @@ local Jezebel = require("jezebel_scripts.jezebel")
 include("items")
 --Adds in the sex
 include("sex.sex")
---Unused for the moment
-include("Enimies.Enimies")
---Custom Stages
-include("GardenOfEden.GardenOfEden")
+--Enemies
+include("CondomGaper")
+
+
+
+
+
+--Custom Stages UNFINISHED!!!!
+--include("GardenOfEden.GardenOfEden")

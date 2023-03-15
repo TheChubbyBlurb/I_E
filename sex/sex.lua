@@ -229,7 +229,10 @@ function IsaacsEcstasy:EffectUpdate(effect)
             if anim:GetData().ExtraAnimStartFrame == extraAnimStartFrame then
                 isThereMatchingAnimation = true
             end
+        
         end
+
+        
 
         if not isThereMatchingAnimation then
             EndCustomExtraAnimation(effect.SpawnerEntity)

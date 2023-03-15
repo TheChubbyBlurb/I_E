@@ -1,0 +1,4 @@
+<costumes anm2root="gfx/characters/">
+  <costume id="1" type="passive" anm2path="COOMING.anm2" />
+
+</costumes>
