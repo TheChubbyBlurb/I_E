@@ -1,4 +1,4 @@
 <costumes anm2root="gfx/characters/">
   <costume id="1" type="passive" anm2path="COOMING.anm2" />
-
+  <costume priority="99" type="none" anm2path="jezebel_hair.anm2" />
 </costumes>

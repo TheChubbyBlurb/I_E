@@ -33,5 +33,4 @@ function IsaacsEcstasy:onCondomGaper(entity)
         end
     end
 end
-print(EntityType.ENTITY_CONDOMGAPER)
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_NPC_UPDATE, IsaacsEcstasy.onCondomGaper, EntityType.ENTITY_CONDOMGAPER)

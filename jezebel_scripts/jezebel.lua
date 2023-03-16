@@ -26,7 +26,7 @@ function jezebel:onCache(player, cacheFlags)
     if player:GetPlayerType() == character then
         print("AddingNullCostume")
         print(enums.Costumes.JEZEBEL_HAIR)
-        --player:AddNullCostume(enums.Costumes.JEZEBEL_HAIR)
+        player:AddNullCostume(enums.Costumes.JEZEBEL_HAIR)
     end
   end
 
