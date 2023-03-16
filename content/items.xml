@@ -1,4 +1,7 @@
 <items gfxroot="gfx/items/" version="1">
-  <passive id="1" description="IM COOMING" gfx="CoomerPillow.png" name="BodyPillow" cache="firedelay"/>
-  <passive id="99" description="I feel funny.." gfx="Viagra.png" name="Viagra" cache="damage"/>
+  <passive id="1" description="IM COOMING" gfx="CoomerPillow.png" name="BodyPillow" cache="shotspeed"/>
+  <passive id="2" description="I feel funny.." gfx="Viagra.png" name="Viagra" cache="damage"/>
+  <passive id="3" description="Anal Protection" gfx="Moms Cock Blocker.png" name="Moms Cock Blocker" cache="damage"/>
+  <passive id="4" description="Don't rip them out!" gfx="old_Moms_Anal_Beads.png" name="Moms Anal Beads" cache="damage"/>
+  <passive id="5" description="Signify your right" gfx="TrampStamp.png" name="Tramp Stamp" cache="damage"/>
 </items>
