@@ -15,7 +15,15 @@ function jezebel:onCache(player, cacheFlags)
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
       player.Damage = player.Damage + 1
       end
+      
+
+
+
+
+
     end
+
+    
 
 
   end
@@ -27,6 +35,11 @@ function jezebel:onCache(player, cacheFlags)
         print("AddingNullCostume")
         print(enums.Costumes.JEZEBEL_HAIR)
         player:AddNullCostume(enums.Costumes.JEZEBEL_HAIR)
+
+        player:AddCollectible(CollectibleType.COLLECTIBLE_BLOOD_PUPPY)
+        player:AddCollectible(CollectibleType.COLLECTIBLE_BLOOD_PUPPY)
+        player:AddCollectible(CollectibleType.COLLECTIBLE_BLOOD_PUPPY)
+        player:AddCollectible(CollectibleType.COLLECTIBLE_BLOOD_PUPPY)
     end
   end
 
