@@ -6,7 +6,8 @@ include("items")
 --Adds in the sex
 include("sex.sex")
 --Enemies
-include("CondomGaper")
+include("Enemies.CondomGaper")
+include("Enemies.Nun")
 
 
 
