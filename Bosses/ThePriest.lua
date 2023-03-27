@@ -1,26 +1,24 @@
 
 --FIltered callback for NPCUpdate
 EntityType.ENTITY_THEPRIEST = Isaac.GetEntityTypeByName("The Priest")
-EntityType.ENTITY_NUN = Isaac.GetEntityTypeByName("The Nun")
 
 debugText = "They're turning the monsters gay!"
 
 
 function moveLogic(npc)
-    angle = math.random(1,360)
-    direction = Vector.FromAngle(angle);
-
+    local angle = math.random(1,360)
+    local direction = Vector.FromAngle(angle);
+    local spawningVel = direction * 10
     --debugText = direction.x;
     if(npc.Velocity.X < 0.001 and npc.Velocity.Y < 0.001) then
-        npc:AddVelocity(direction:__mul(10));
+        
+        npc:AddVelocity(spawningVel);
     end
 end
 
 function IsaacsEcstasy:update(Priest)
-    player = Isaac.GetPlayer(0);
+    local target = Priest:GetPlayerTarget()
     local sprite = Priest:GetSprite()
-    sprite:PlayOverlay("Head", false)
-    Priest:AnimWalkFrame("WalkHori", "WalkVert", 0.1)
 
     if(Priest.State == NpcState.STATE_INIT) then
         sprite:Play("Appear")
@@ -49,11 +47,12 @@ function IsaacsEcstasy:update(Priest)
             sprite:Play("Shoot")
         end
 
-        if(Priest.StateFrame % 3 == 0) then
-            angle = math.random(1,180);
-            mag = math.random(1,10)
+        if Priest:GetSprite():IsEventTriggered("Shoot") then
+            local angle = math.random(1,180);
+            local mag = math.random(1,10)
+            local spawningVel = Vector.FromAngle(angle) * mag
 
-            Isaac.Spawn(EntityType.ENTITY_PROJECTILE, 0, 0, Priest.Position, Vector.FromAngle(angle):__mul(mag), nil);
+            Isaac.Spawn(EntityType.ENTITY_PROJECTILE, 0, 0, Priest.Position, spawningVel, nil)
         end
 
         if (sprite:IsFinished("Shoot")) then
@@ -69,7 +68,7 @@ function IsaacsEcstasy:update(Priest)
             sprite:Play("Spawn")
         end
 
-        if(Priest.StateFrame % 3 == 0) then
+        if Priest:GetSprite():IsEventTriggered("Spawn") then
             Isaac.Spawn(EntityType.ENTITY_NUN, 0, 0, Priest.Position, Vector(0,0), Priest)
         end
 
@@ -79,7 +78,6 @@ function IsaacsEcstasy:update(Priest)
         end
         Priest.StateFrame = Priest.StateFrame + 1;
     end
-
     moveLogic(Priest);
 end
 
@@ -90,4 +88,4 @@ end
 print("THE HOLY ONE")
 
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_RENDER, IsaacsEcstasy.debug_text);
-IsaacsEcstasy:AddCallback(ModCallbacks.MC_NPC_UPDATE, IsaacsEcstasy.update, Priest);
+IsaacsEcstasy:AddCallback(ModCallbacks.MC_NPC_UPDATE, IsaacsEcstasy.update, EntityType.ENTITY_THEPRIEST);

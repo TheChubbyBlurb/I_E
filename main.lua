@@ -10,7 +10,7 @@ include("Enemies.CondomGaper")
 include("Enemies.Nun")
 
 --Bosses B)
---include("Bosses.ThePriest")
+include("Bosses.ThePriest")
 
 
 --Custom Stages UNFINISHED!!!!
