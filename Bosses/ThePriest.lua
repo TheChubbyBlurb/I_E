@@ -87,5 +87,5 @@ end
 
 print("THE HOLY ONE")
 
-IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_RENDER, IsaacsEcstasy.debug_text);
+--IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_RENDER, IsaacsEcstasy.debug_text);
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_NPC_UPDATE, IsaacsEcstasy.update, EntityType.ENTITY_THEPRIEST);
