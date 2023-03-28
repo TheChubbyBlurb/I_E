@@ -1,0 +1,3 @@
+<nightmares root="gfx/ui/stage/" progressAnm2="progress.anm2">
+	<nightmare anm2="nightmare_ie1.anm2"/>
+</nightmares>
