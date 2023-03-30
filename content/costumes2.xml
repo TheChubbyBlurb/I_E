@@ -1,6 +1,7 @@
 <costumes anm2root="gfx/characters/">
   <costume id="1" type="passive" anm2path="COOMING.anm2" />
   <costume id="3" type="passive" anm2path="MomsCockBlocker.anm2" />
+  <costume id="6" type="passive" anm2path="Z_Tech.anm2" />
   
 
 
