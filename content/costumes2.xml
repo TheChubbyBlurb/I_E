@@ -8,6 +8,9 @@
 
 
 
-
+  <!-- Custom Characters Hair -->
   <costume priority="99" type="none" anm2path="jezebel_hair.anm2" />
+
+  <!-- Custom Transformation outfits -->
+  <costume priority="99" type="none" anm2path="Inflatible.anm2" />
 </costumes>

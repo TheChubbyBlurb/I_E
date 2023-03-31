@@ -3,6 +3,7 @@
 local Viagra = Isaac.GetItemIdByName("Viagra")
 local ViagraDamage = 20
 local game = Game()
+local sound = SFXManager()
 
 function IsaacsEcstasy:EvaluateViagraCache(player, cacheFlags)
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
@@ -42,3 +43,25 @@ function IsaacsEcstasy:EvaluateMomsCockBlocker(player, cacheFlags)
     end
 end
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.EvaluateMomsCockBlocker)
+
+
+
+
+--Transformations!!!
+
+--Inflatible
+
+IsaacsEcstasy.COSTUME_INFLATIBLE = Isaac.GetCostumeIdByPath("gfx/characters/Inflatible.anm2")
+
+function IsaacsEcstasy:InflatibleTransformation(player)
+    if game:GetFrameCount() == 1 then
+        IsaacsEcstasy.isInflatible = false
+    end
+    if not IsaacsEcstasy.isInflatible and player:HasCollectible(669) and player:HasCollectible(618) and player:HasCollectible(716)then
+        player:AddNullCostume(IsaacsEcstasy.COSTUME_INFLATIBLE)
+        sound:Play(132, 1, 0, false, 1)
+        IsaacsEcstasy.isInflatible = true
+    end
+end
+
+IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, IsaacsEcstasy.InflatibleTransformation)
