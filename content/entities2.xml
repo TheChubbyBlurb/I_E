@@ -30,6 +30,12 @@
         <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
     </entity>
 
+  <entity anm2path="MV01_CondomGaper.anm2" hasFloorAlts="false" reroll="true" baseHP="17" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="10" name="Erogelic" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="0">
+		<bestiary transform="0,0,1" anim="WalkVert" overlay="Head" />
+        <gibs amount="6" blood="1" bone="1" eye="1" gut="1" large="0" />
+        <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
+    </entity>
+
     <!-- Priest boss with the nuns after him -->
     <entity anm2path="ThePriest.anm2" hasFloorAlts="false" reroll="false" baseHP="200" boss="1" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="11" name="The Priest" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="1">
       <bestiary transform="0,0,1" anim="WalkVert" overlay="Head" />
@@ -42,4 +48,5 @@
             <gibs amount="6" blood="1" bone="1" eye="1" gut="1" large="0" />
             <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
         </entity>
+
 </entities>

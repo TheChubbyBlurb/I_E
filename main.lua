@@ -8,6 +8,7 @@ include("sex.sex")
 --Enemies
 include("Enemies.CondomGaper")
 include("Enemies.Nun")
+include("Enemies.Erogelic")
 
 --Bosses B)
 include("Bosses.ThePriest")
