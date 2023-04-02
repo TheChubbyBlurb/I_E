@@ -52,17 +52,14 @@ IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.Evaluate
 IsaacsEcstasy.COLLECTIBLE_WHIP = Isaac.GetItemIdByName("Whip")
 EntityType.ENTITY_WHIP = Isaac.GetEntityTypeByName("Whip")
 
-function IsaacsEcstasy:OnWhip(player, hook, action)
+function IsaacsEcstasy:OnWhip(player)
     
     local WhipSprite = player:GetSprite()
 
-    if player ~= nil and player:HasCollectible(IsaacsEcstasy.COLLECTIBLE_WHIP) then
-        local player = player:ToPlayer()
+    if player:HasCollectible(IsaacsEcstasy.COLLECTIBLE_WHIP) then
 
-        if player and hook == InputHook.GET_ACTION_VALUE then
-            if action == ButtonAction.ACTION_SHOOTDOWN then
-                return Isaac.Spawn(EntityType.ENTITY_WHIP, 0, 0, player.Position, 0, nil)
-            end
+        if player:GetAimDirection() == Direction.DOWN then
+            print("shotDown")
         end
     end
 end
