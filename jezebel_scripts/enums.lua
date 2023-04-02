@@ -10,7 +10,5 @@ enums.Costumes = {
     JEZEBELB_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/jezebel_hair.anm2")
 }
 
-print("Code in enums ran")
-
 return enums
 

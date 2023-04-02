@@ -18,6 +18,10 @@
     <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
   </entity>
 
+  <entity anm2path="The_Whip.anm2" name="The Whip" id="1001" variant="" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="0" friction="1" numGridCollisionPoints="0" shadowSize="0" shutdoors="false" stageHP="0" gridCollision="none"> 
+    <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+  </entity>
+
   <entity anm2path="M01_Beez.anm2" reroll="true" baseHP="10" boss="0" champion="1" collisionDamage="1" collisionMass="3" collisionRadius="13" friction="1" id="12" name="BeezHorf" numGridCollisionPoints="12" shadowSize="13" stageHP="0" variant="2" portrait="4">
   <bestiary transform="0,0,1" anim="Shake" overlay="Head" />
       <gibs amount="6" blood="1" bone="1" eye="0" gut="1" large="0" />
@@ -30,8 +34,8 @@
         <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
     </entity>
 
-  <entity anm2path="MV01_CondomGaper.anm2" hasFloorAlts="false" reroll="true" baseHP="17" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="10" name="Erogelic" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="0">
-		<bestiary transform="0,0,1" anim="WalkVert" overlay="Head" />
+  <entity anm2path="monsters/cathedral/Erogelic/Erogelic.anm2" hasFloorAlts="false" reroll="true" baseHP="17" boss="0" champion="1" collisionDamage="1" collisionMass="5" collisionRadius="13" friction="1" id="10" name="Erogelic" numGridCollisionPoints="12" shadowSize="16" stageHP="0" variant="0" portrait="0">
+		<bestiary transform="0,0,1" anim="Fly" />
         <gibs amount="6" blood="1" bone="1" eye="1" gut="1" large="0" />
         <preload-snd id="165" /> <!-- SOUND_ZOMBIE_WALKER_KID -->
     </entity>

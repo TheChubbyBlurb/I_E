@@ -22,10 +22,6 @@ function jezebel:onCache(player, cacheFlags)
 
 
     end
-
-    
-
-
   end
   IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, jezebel.onCache)
 

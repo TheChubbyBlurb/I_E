@@ -1,8 +1,11 @@
 <items gfxroot="gfx/items/" version="1">
   <passive id="1" description="IM COOMING" gfx="CoomerPillow.png" name="BodyPillow" cache="shotspeed" />
-  <passive id="2" description="I feel funny.." gfx="Viagra.png" name="Viagra" cache="damage"/>
+  <passive id="2" description="I feel funny..." gfx="Viagra.png" name="Viagra" cache="damage"/>
   <passive id="3" description="Anal Protection" gfx="Moms Cock Blocker.png" name="Moms Cock Blocker" cache="damage" tags="mom"/>
   <passive id="4" description="Don't rip them out!" gfx="old_Moms_Anal_Beads.png" name="Moms Anal Beads" cache="damage" tags="mom"/>
   <passive id="5" description="Lovely Tattoo" gfx="TrampStamp.png" name="Tramp Stamp" cache="damage" tags="mom"/>
   <passive id="6" description="Stare and Obey" gfx="Z_Tech.png" name="Z_Tech" cache="all"/>
+
+<!-- Jezebels Awesome Whipper Snapper-->
+  <passive id="7" description="Put them in their place." gfx="JezebelsWhip.png" name="Whip" cache="all"/>
 </items>
