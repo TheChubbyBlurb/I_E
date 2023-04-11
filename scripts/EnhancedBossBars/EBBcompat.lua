@@ -9,12 +9,3 @@ function IsaacsEcstasy:MonstroRender()
 	end
 end
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_NPC_INIT, IsaacsEcstasy.MonstroRender, EntityType.ENTITY_MONSTRO)
-
-
---function IsaacsEcstasy:MonstroRender(MonstroEntity) 
---	if HPBars then 
---	HPBars.BossDefinitions["20.0"] = {sprite = "gfx/ui/bosshp_icons/chapter1/IE/monstro.png",
---			offset = Vector(-4, 0)}
---	end
---end
---IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_NPC_INIT, IsaacsEcstasy.MonstroRender, EntityType.ENTITY_MONSTRO)
