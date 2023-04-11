@@ -58,8 +58,8 @@ function IsaacsEcstasy:OnWhip(player)
 
     if player:HasCollectible(IsaacsEcstasy.COLLECTIBLE_WHIP) then
 
-        if player:GetAimDirection() == Direction.DOWN then
-            print("shotDown")
+        if player:GetAimDirection():Length() > 0.001 then
+            print("Shot??")
         end
     end
 end
@@ -86,11 +86,14 @@ IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, IsaacsEcstasy.OnWh
 IsaacsEcstasy.COSTUME_INFLATIBLE = Isaac.GetCostumeIdByPath("gfx/characters/Inflatible.anm2")
 
 function IsaacsEcstasy:InflatibleTransformation(player)
+    local hud = game:GetHUD()
+
     if game:GetFrameCount() == 1 then
         IsaacsEcstasy.isInflatible = false
     end
     if not IsaacsEcstasy.isInflatible and player:HasCollectible(669) and player:HasCollectible(618) and player:HasCollectible(716)then
         player:AddNullCostume(IsaacsEcstasy.COSTUME_INFLATIBLE)
+        hud:ShowItemText("INFLATIBLE!", " ")
         sound:Play(132, 1, 0, false, 1)
         IsaacsEcstasy.isInflatible = true
     end

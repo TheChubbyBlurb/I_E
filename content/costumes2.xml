@@ -10,6 +10,8 @@
 
   <!-- Custom Characters Hair -->
   <costume priority="99" type="none" anm2path="jezebel_hair.anm2" />
+  <costume priority="99" type="none" anm2path="foster_head.anm2" />
+
   <costume priority="99" type="none" anm2path="ModdedCharSupport/player_fiend.anm2" />
 
 

@@ -7,8 +7,15 @@
 		portrait="null.png"
 		extraportrait="playerportrait_jezebel.anm2"
 		costumeSuffix="jezebel"
-
-		
 	/>
+	<!--<player
+		name="Foster" 
+		hp="0" armor="6" 
+		skin="character_Foster.png" skinColor="-1"
+		nameimage="playername_jezebel.png"
+		portrait="null.png"
+		extraportrait="playerportrait_jezebel.anm2"
+		costumeSuffix="foster"
+	/> -->
 	
 </players>
