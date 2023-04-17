@@ -1,9 +1,10 @@
 
 --Viagra
-local Viagra = Isaac.GetItemIdByName("Viagra")
-local ViagraDamage = 20
 local game = Game()
 local sound = SFXManager()
+
+local Viagra = Isaac.GetItemIdByName("Viagra")
+local ViagraDamage = 20
 
 function IsaacsEcstasy:EvaluateViagraCache(player, cacheFlags)
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
@@ -13,6 +14,23 @@ function IsaacsEcstasy:EvaluateViagraCache(player, cacheFlags)
     end
 end
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.EvaluateViagraCache)
+
+local Condom = Isaac.GetItemIdByName("Condom")
+local CondomLuck = 0.50
+
+function IsaacsEcstasy:EvaluateCondomCache(player, cacheFlags)
+    if EID then
+        EID:addCollectible(Condom, "Adds 20 luck", "Condom")
+    end
+    if cacheFlags & CacheFlag.CACHE_LUCK == CacheFlag.CACHE_LUCK then
+        local itemCount = player:GetCollectibleNum(Condom)
+        local luckToAdd = CondomLuck * itemCount
+        player.Luck = player.Luck + luckToAdd
+    end
+end
+IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.EvaluateCondomCache)
+
+
 
 --BodyPillow
 local BodyPillow = Isaac.GetItemIdByName("BodyPillow")
@@ -45,25 +63,9 @@ end
 IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.EvaluateMomsCockBlocker)
 
 
-IsaacsEcstasy:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, IsaacsEcstasy.EvaluateBodyPillowCache,  ModCallbacks.MC_POST_PEFFECT_UPDATE)
 
 
 
-IsaacsEcstasy.COLLECTIBLE_WHIP = Isaac.GetItemIdByName("Whip")
-EntityType.ENTITY_WHIP = Isaac.GetEntityTypeByName("Whip")
-
-function IsaacsEcstasy:OnWhip(player)
-    
-    local WhipSprite = player:GetSprite()
-
-    if player:HasCollectible(IsaacsEcstasy.COLLECTIBLE_WHIP) then
-
-        if player:GetAimDirection():Length() > 0.001 then
-            print("Shot??")
-        end
-    end
-end
-IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, IsaacsEcstasy.OnWhip)
 
 
 
@@ -83,20 +85,20 @@ IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, IsaacsEcstasy.OnWh
 
 --Inflatible
 
-IsaacsEcstasy.COSTUME_INFLATIBLE = Isaac.GetCostumeIdByPath("gfx/characters/Inflatible.anm2")
+--IsaacsEcstasy.COSTUME_INFLATIBLE = Isaac.GetCostumeIdByPath("gfx/characters/Inflatible.anm2")
 
-function IsaacsEcstasy:InflatibleTransformation(player)
-    local hud = game:GetHUD()
+--function IsaacsEcstasy:InflatibleTransformation(player)
+--    local hud = game:GetHUD()
 
-    if game:GetFrameCount() == 1 then
-        IsaacsEcstasy.isInflatible = false
-    end
-    if not IsaacsEcstasy.isInflatible and player:HasCollectible(669) and player:HasCollectible(618) and player:HasCollectible(716)then
-        player:AddNullCostume(IsaacsEcstasy.COSTUME_INFLATIBLE)
-        hud:ShowItemText("INFLATIBLE!", " ")
-        sound:Play(132, 1, 0, false, 1)
-        IsaacsEcstasy.isInflatible = true
-    end
-end
-
-IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, IsaacsEcstasy.InflatibleTransformation)
+--    if game:GetFrameCount() == 1 then
+--        IsaacsEcstasy.isInflatible = false
+--    end
+--    if not IsaacsEcstasy.isInflatible and player:HasCollectible(669) and player:HasCollectible(618) and player:HasCollectible(716)then
+--        player:AddNullCostume(IsaacsEcstasy.COSTUME_INFLATIBLE)
+--        hud:ShowItemText("INFLATIBLE!", " ")
+--        sound:Play(132, 1, 0, false, 1)
+--        IsaacsEcstasy.isInflatible = true
+--    end
+--end
+--
+--IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, IsaacsEcstasy.InflatibleTransformation)
