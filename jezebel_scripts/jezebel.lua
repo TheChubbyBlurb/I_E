@@ -7,7 +7,7 @@ local stats = {
     DMG_MULTI = 0.50
 }
 
-function jezebel:onCache(player, cacheFlags, tear)
+function jezebel:onCache(player, cacheFlags)
     if player:GetPlayerType() == character then       
      if cacheFlags & CacheFlag.CACHE_LUCK == CacheFlag.CACHE_LUCK then
       player.Luck = player.Luck + 1
@@ -15,21 +15,6 @@ function jezebel:onCache(player, cacheFlags, tear)
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
       player.Damage = player.Damage + 1
       end
-      
-      local tearSpawner = tear.SpawnerEntity
-      
-      if(tearSpawner and tearSpawner:ToPlayer()) then
-  
-              local bone = Isaac.Spawn(1000, WhipCrack, 0, tear.Position, Vector.Zero, tear.SpawnerEntity)
-              bone = bone:ToEffect()
-              bone:GetSprite():Play("AttackDown", true)
-              bone.CollisionDamage = bone.CollisionDamage*2
-              --bone.SpriteScale = Vector(0.5,2)
-              bone.SpriteRotation = tear.Velocity:GetAngleDegrees()-90
-              --bone:GetSprite().PlaybackSpeed = 2
-              bone:FollowParent(tear.SpawnerEntity)
-      end
-
 
 
 

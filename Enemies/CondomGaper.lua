@@ -13,6 +13,10 @@ function IsaacsEcstasy:onCondomGaper(entity)
     local data = entity:GetData()
     if data.GridCountdown == nil then data.GridCountdown = 0 end
 
+    if (sprite:GetAnimation() == "WalkVert" and entity.Velocity.Y<0) then
+        sprite:SetAnimation("WalkUp")
+    end
+
     if entity.State == 0 then --Random
         if entity:IsFrame(math.ceil(CondomGaper.SPEED), 0) then
             entity.Pathfinder:MoveRandomly(false)

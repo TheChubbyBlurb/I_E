@@ -2,7 +2,7 @@
     <player
 		name="Jezebel" 
 		hp="4" black="2" items="565, 565, 565, 565"
-		skin="character_Jezebel.png" skinColor="1"
+		skin="character_Jezebel2.png" skinColor="1"
 		nameimage="playername_jezebel.png"
 		portrait="null.png"
 		extraportrait="playerportrait_jezebel.anm2"
