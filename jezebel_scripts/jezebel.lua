@@ -33,12 +33,12 @@ function jezebel:onCache(player, cacheFlags)
   end
 
   IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, IsaacsEcstasy.onPlayerInit)
-  local WhipCrack = Isaac.GetEntityVariantByName("Whip Strike")
 
+  local WhipCrack = Isaac.GetEntityVariantByName("Whip Strike")
   IsaacsEcstasy.COLLECTIBLE_WHIP = Isaac.GetItemIdByName("Whip")
   --EntityType.ENTITY_WHIP = Isaac.GetEntityTypeByName("Whip")
   
-  function IsaacsEcstasy:OnWhip(tear)
+  function IsaacsEcstasy:OnWhip(tear, player, entity)
       local tearSpawner = tear.SpawnerEntity
       local playerType = tearSpawner:ToPlayer():GetPlayerType()
       if(playerType == character) then
@@ -47,15 +47,24 @@ function jezebel:onCache(player, cacheFlags)
           local bone = Isaac.Spawn(1000, WhipCrack, 0, tear.Position, Vector.Zero, tear.SpawnerEntity)
           bone = bone:ToEffect()
           bone:GetSprite():Play("AttackDown", true)
-          bone.CollisionDamage = bone.CollisionDamage*2
+          --bone.CollisionDamage = bone.CollisionDamage*2
           --bone.SpriteScale = Vector(0.5,2)
           bone.SpriteRotation = tear.Velocity:GetAngleDegrees()-90
           --bone:GetSprite().PlaybackSpeed = 2
           bone:FollowParent(tear.SpawnerEntity)
 
-  end
+          end
+      end
+      local range = EntityPlayer.TearRange;
+      local damage = EntityPlayer.Damage;
+      local enemy_entities = Isaac.FindInRadius(entity.Position, range, EntityPartition.ENEMY)
+
+      for i, entity in ipairs(enemy_entities) do
+        entity:TakeDamage(damage, 0, EntityRef(EntityPlayer), 0)
       end
   end
+
+      
   IsaacsEcstasy:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, IsaacsEcstasy.OnWhip)
   
   ---@param whip EntityEffect
@@ -69,3 +78,5 @@ function jezebel:onCache(player, cacheFlags)
 
 
   return jezebel
+
+  
